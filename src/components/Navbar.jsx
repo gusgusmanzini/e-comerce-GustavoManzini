@@ -1,32 +1,19 @@
-import React, { useState } from 'react';
-import "../App.css"
-
-function Navbar () {
-    const navRef = useRef();
-
-    const showNavbar = () => {
-        navRef.current.classList.toggle(
-            "responsive_nav"
-        );
-    };
-
-    return (
-        <header>
-            <h3>LOGO</h3>
-            <nav ref={navRef}>
-                <a href="/#">Inicio</a>
-                <a href="/#">Sobre Nosotros</a>
-                <a href="/#">Contactanos</a>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    <FaTimes />
-                </button>
-            </nav>
-            <button className="nav-btn" onClick={showNavbar}>
-                <FaBars />
-            </button>
-        </header>
-    );
-}
-
-export default Navbar;
-
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import { CartWidget } from "./CartWidget";
+export const NavBar = () => (
+  <>
+    <Navbar bg="dark" data-bs-theme="dark">
+      <Container>
+        <Navbar.Brand href="#home">Tienda Mates</Navbar.Brand>
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Inicio</Nav.Link>
+          <Nav.Link href="#features">Nuestros Productos</Nav.Link>
+          <Nav.Link href="#pricing">Contacto</Nav.Link>
+        </Nav>
+        <CartWidget />
+      </Container>
+    </Navbar>
+  </>
+);
