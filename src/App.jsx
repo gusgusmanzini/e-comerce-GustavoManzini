@@ -1,5 +1,6 @@
-import { NavBar } from "./components/NavBar";
-import  ItemListContainer  from "./components/ItemListContainer";
+import React from "react";
+import  NavBar  from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
   return (
@@ -9,4 +10,5 @@ function App() {
     </>
   );
 }
+
 export default App;
