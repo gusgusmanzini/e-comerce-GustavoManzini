@@ -31,10 +31,3 @@ const ItemListContainer = () => {
 };
 
 export default ItemListContainer
-// export const ItemListContainer = ({ greeting}) => (
-//   <Container className="mt-4">
-//     <h1>{greeting}</h1>
-//   </Container>
-// );
-
-// export default ItemListContainer;
