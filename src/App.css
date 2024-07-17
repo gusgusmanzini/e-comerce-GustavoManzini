@@ -4,3 +4,57 @@ span {
   font-weight: 600;
   color: whitesmoke;
 }
+.catalogo{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.titulo{
+  margin-left: 20px;
+}
+
+.desc{
+  margin-left: 20px;
+}
+
+.precio{
+  margin-left: 20px;
+}
+
+ .btn{
+  margin-left: 20px;
+  border: 2px solid black;
+} 
+
+.item{
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+.item-image {
+  width: 100px;
+  height: auto;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px;
+  cursor: pointer;
+  width: 10%; 
+  height: auto; 
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 2px solid black; */
+
+}
+
+.item-list {
+  display: flex;
+  flex-direction: row; /* Disposición en fila */
+  justify-content: center; /* Centra los items horizontalmente */
+  align-items: center; /* Centra los items verticalmente */
+  gap: 20px; /* Espacio entre items */
+}
