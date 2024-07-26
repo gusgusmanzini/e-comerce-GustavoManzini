@@ -37,26 +37,16 @@ span {
 .item-image {
   width: 100px;
   height: auto;
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; 
-  gap: 20px;
-  cursor: pointer;
-  width: 10%; 
-  height: auto; 
-  margin-top: 10px;
-  margin-left: 20px;
-  border: 2px solid black; */
+ 
 
 }
 
 .item-list {
   display: flex;
-  flex-direction: row; /* Disposición en fila */
-  justify-content: center; /* Centra los items horizontalmente */
-  align-items: center; /* Centra los items verticalmente */
-  gap: 20px; /* Espacio entre items */
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px; 
 }
 
 .nosotros{
@@ -76,3 +66,48 @@ span {
   text-align: center;
   align-items: center;
 }
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+ 
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+form > div {
+  margin-bottom: 15px;
+}
+

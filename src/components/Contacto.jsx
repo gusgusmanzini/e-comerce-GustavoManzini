@@ -3,8 +3,8 @@ import React from "react";
 const Contacto = () => {
   return (
     <>
-      <label for="email">Correo Electronico</label>
-      <input type="email" id="email" name="email" required></input>
+      <label className="correo" for="email">Correo Electronico</label>
+      <input  type="email" id="email" name="email" required></input>
 
       <label for="subject">Asunto:</label>
       <input type="text" id="subject" name="subject" required></input>
