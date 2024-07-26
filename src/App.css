@@ -58,3 +58,21 @@ span {
   align-items: center; /* Centra los items verticalmente */
   gap: 20px; /* Espacio entre items */
 }
+
+.nosotros{
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.n-title{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+.p-text{
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
