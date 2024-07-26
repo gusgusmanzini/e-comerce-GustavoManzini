@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Mate Imperial",
+		"id": "1",
+		"category": "Mates",
+		"detail": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500",
+		"img": "https://www.proweb.com.uy/imgs/productos/productos34_8427.jpg"
+	},
+	{
+		"name": "Mate Imperial 2",
+		"id": 2,
+		"category": "Mates",
+		"detail": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500",
+		"img": "https://puntoshopuy.com.uy/cdn/shop/files/Copiade2_3CM_30_720x.png?v=1698965942"
+	},
+	{
+		"name": "Mate Imperial 3",
+		"id": 3,
+		"category": "MatesImperiales",
+		"detail": "Mate de cuero negro",
+		"img": "https://sapucaimates.com/wp-content/uploads/2021/01/6555.jpg"
+	}
+]

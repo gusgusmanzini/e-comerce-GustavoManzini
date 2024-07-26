@@ -1,5 +1,7 @@
 import React from 'react';
 import "../App";
+import { Link } from 'react-router-dom';
+
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
   return (
@@ -8,7 +10,7 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
       <img className="item-image"  src={pictureUrl} alt={title} />
       <p className='desc'>{description}</p>
       <p className='precio'>Precio: ${price}</p>
-      <button className='btn'>Comprar</button>
+      <Link className='btn' to={'/item/${producto.id}'}>Ver Mas</Link>
     </div>
   );
 };
