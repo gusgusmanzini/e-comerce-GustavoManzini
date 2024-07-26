@@ -1,13 +1,15 @@
 import Container from "react-bootstrap/Container";
 import ItemList from "./ItemList";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import '../App';
 
 const ItemListContainer = () => {
+  const { id } = useParams();
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const fetchItems = () => {
+    const fetchItems =  () => {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve([
