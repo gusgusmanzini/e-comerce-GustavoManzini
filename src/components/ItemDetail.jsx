@@ -1,27 +1,31 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
+import { useNavigate } from "react-router-dom";
+
+
+
+const ItemDetail = ({ item }) => {
+    const [count, setCount] = useState(0);
+    const [showCount, setShowCount] = useState(true);
+    const history = useNavigate();
 
     const onAdd = (quantity) => {
         setCount(quantity);
         setShowCount(false);                
     };
 
-
-const ItemDetail = ({ item}) => {
-    const [count, setCount] = useState(0);
-    const [showCount, setShowCount] = useState(true);
     
 
     return(
         <div>
-            <h2>{item.name}</h2>
+            <h1>{item.name}</h1>
             <img src={item.imageUrl} alt={item.name} />
             <p>{item.description}</p>
-            <p>Precio: ${item.price}</p>
+            <p>{item.price}</p>
             {showCount ? (
                 <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             ): (
-                <button onClick={() => history.pushState("/cart")}>Finalizar la compra</button>
+                <button onClick={() => navigate('/cart')}>Finalizar la compra</button>
             )}
         </div>
     );
