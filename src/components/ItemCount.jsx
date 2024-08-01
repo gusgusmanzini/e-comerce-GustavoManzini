@@ -5,12 +5,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     const handleAdd = () => {
         if (count < stock) {
+            console.log('Incrementando count:', count + 1);
             setCount(count + 1);
         }
     };
 
     const handleSubtract = () => {
         if (count > 1) {
+            console.log('Decrementando count:', count + 1);
             setCount(count - 1);
         }
     };
@@ -22,7 +24,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <div>
             <button onClick={handleSubtract}>-</button>
-            <span>{count}</span>
+            <span className='count'>{count}</span>
             <button onClick={handleAdd}>+</button>
             <button onClick={handleAddToCart}>Agregar al carrito</button>
         </div>
