@@ -1,12 +1,12 @@
 import React from "react";
-import { categorias } from "../caegorias/Categorias";
+import { categorias } from "../Categorias";
 
 const CategoryList = ({ onSelectCategory }) => {
     return (
       <div>
         <h2>Categories</h2>
         <ul>
-          {categories.map((category) => (
+          {categorias.map((category) => (
             <li key={category.id} onClick={() => onSelectCategory(category.id)}>
               {category.name}
             </li>
