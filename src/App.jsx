@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
 
+
 function App() {
   return (
   
@@ -14,6 +15,7 @@ function App() {
         <NavBar />
 
         <Routes>
+          
           <Route path="/" element={<ItemListContainer />} />
           <Route path="category/:id" element={ <ItemListContainer  />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
