@@ -5,6 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
  import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { CartProvider } from './components/ItemDetail';
+
+
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBvLrarSkgbMxqsJVymY0F6PCGgdgSwXS0",
@@ -27,5 +32,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 
 
-//hola
+
 

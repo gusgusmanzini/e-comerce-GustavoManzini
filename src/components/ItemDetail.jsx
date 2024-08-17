@@ -1,13 +1,26 @@
-import React, { useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../"
+ 
+const CartContext = createContext();
 
+export const useCart = () => useContext(CartContext);
 
+export const CartProvider = ({ children }) => {
+    const [purchaseCompleted, setPurchaseCompleted] = useState(false);
+
+    return(
+        <CartContext.Provider value={{ purchaseCompleted, setPurchaseCompleted }}>
+            {children}
+        </CartContext.Provider>
+    )
+}
 
 const ItemDetail = ({ item }) => {
     const [count, setCount] = useState(0);
     const [showCount, setShowCount] = useState(true);
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const onAdd = (quantity) => {
         setCount(quantity);
