@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
             {showCount ? (
                 <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             ): (
-                <button onClick={() => navigate('/cart')}>Finalizar la compra</button>
+                <button  onClick={() => navigate('/cart')}>Finalizar la compra</button>
             )}
         </div>
     );

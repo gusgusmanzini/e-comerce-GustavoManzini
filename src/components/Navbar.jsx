@@ -7,6 +7,10 @@ export const NavBar = () => (
   <>
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
+        <div className="dropdown">
+          <button className="dropbtn">Categorias</button>
+          
+        </div>
         <Navbar.Brand href="/">Tienda Mates</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Inicio</Nav.Link>
