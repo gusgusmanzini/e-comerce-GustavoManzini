@@ -1,8 +1,9 @@
 import React, { createContext, useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../"
- 
+//import { useCart } from "../CartContext";
+
+
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
@@ -31,7 +32,7 @@ const ItemDetail = ({ item }) => {
 
     return(
         <div>
-            <h1>{item.name}</h1>
+            <h2>{item.name}</h2>
             <img src={item.imageUrl} alt={item.name} />
             <p>{item.description}</p>
             <p>{item.price}</p>

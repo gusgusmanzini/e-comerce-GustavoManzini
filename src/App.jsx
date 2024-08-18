@@ -6,41 +6,31 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
 import CategoryPage from "./components/CategoryPage";
-// import Home from './components/Home';
-// import Cart from "./components/Cart";
+import { CartProvider } from "./CartContext.jsx";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 
-
 function App() {
-  useEffect(( ) => {
+  useEffect(() => {
     const db = getFirestore();
 
     const refDoc = doc(db, "items", "N5fCLUxWKVmaxThMkwpW");
 
-    getDoc(refDoc)
-    .then((snapshot) => {
+    getDoc(refDoc).then((snapshot) => {
       console.log({ id: snapshot.id, ...snapshot.data() });
-    })
-  })
+    });
+  });
   return (
-  
-      <BrowserRouter>
+    <BrowserRouter>
+      <NavBar />
 
-        <NavBar />
-
-        <Routes>
-          
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="category/:id" element={ <ItemListContainer  />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/nosotros" element={<Nosotros />}  />
-          <Route path="/contacto" element={<Contacto />}  />
-          
-        </Routes>
-
-
-      </BrowserRouter>
-    
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="category/:id" element={<ItemListContainer />} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
