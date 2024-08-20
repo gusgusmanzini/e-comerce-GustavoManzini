@@ -8,6 +8,7 @@ import Contacto from "./components/Contacto";
 import CategoryPage from "./components/CategoryPage";
 import { CartProvider } from "./CartContext.jsx";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
+import Cart from './Cart.jsx';
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,8 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/Cart" element={<Cart />} />
+        
       </Routes>
     </BrowserRouter>
   );

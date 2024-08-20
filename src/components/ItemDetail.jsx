@@ -1,32 +1,32 @@
 import React, { createContext, useState, useContext } from "react";
 import ItemCount from "./ItemCount";
 import { useNavigate } from "react-router-dom";
-//import { useCart } from "../CartContext";
 
 
-const CartContext = createContext();
 
-export const useCart = () => useContext(CartContext);
+ const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-    const [purchaseCompleted, setPurchaseCompleted] = useState(false);
+ export const useCart = () => useContext(CartContext);
 
-    return(
-        <CartContext.Provider value={{ purchaseCompleted, setPurchaseCompleted }}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+ export const CartProvider = ({ children }) => {
+     const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
-const ItemDetail = ({ item }) => {
-    const [count, setCount] = useState(0);
-    const [showCount, setShowCount] = useState(true);
-    const navigate = useNavigate();
+     return(
+         <CartContext.Provider value={{ purchaseCompleted, setPurchaseCompleted }}>
+             {children}
+         </CartContext.Provider>
+     )
+ }
 
-    const onAdd = (quantity) => {
-        setCount(quantity);
-        setShowCount(false);                
-    };
+ const ItemDetail = ({ item }) => {
+     const [count, setCount] = useState(0);
+     const [showCount, setShowCount] = useState(true);
+     const navigate = useNavigate();
+
+     const onAdd = (quantity) => {
+         setCount(quantity);
+         setShowCount(false);                
+     };
 
     
 
@@ -39,7 +39,8 @@ const ItemDetail = ({ item }) => {
             {showCount ? (
                 <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
             ): (
-                <button  onClick={() => navigate('/cart')}>Finalizar la compra</button>
+                <button  onClick={() => navigate('/Cart')}>Finalizar la compra</button>
+              
             )}
         </div>
     );

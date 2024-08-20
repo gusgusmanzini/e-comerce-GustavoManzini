@@ -156,3 +156,8 @@ form > div {
 .dropdown:hover .dropbtn {
   background-color: #2980b9;
 } */
+
+.gracias{
+  display: flex;
+  text-align: center;
+}
