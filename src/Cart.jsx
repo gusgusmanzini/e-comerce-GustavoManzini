@@ -1,4 +1,4 @@
-// Suponiendo que tienes un archivo Cart.js
+
 
 import React from 'react';
 
