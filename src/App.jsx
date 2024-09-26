@@ -8,6 +8,8 @@ import Contacto from "./components/Contacto";
 import CategoryPage from "./components/CategoryPage";
 import { CartProvider } from "./CartContext.jsx";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import firebaseConfig from './firebaseConfig.jsx';
 import Cart from './Cart.jsx';
 
 function App() {
