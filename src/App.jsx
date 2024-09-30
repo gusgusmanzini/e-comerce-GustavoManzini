@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nosotros from "./components/Nosotros";
 import Contacto from "./components/Contacto";
 import CategoryPage from "./components/CategoryPage";
-import { CartProvider } from "./CartContext.jsx";
+import CartProvider from "./CartContext.jsx";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from './firebaseConfig.jsx';
@@ -24,6 +24,7 @@ function App() {
     });
   });
   return (
+    <CartProvider>
     <BrowserRouter>
       <NavBar />
 
@@ -37,6 +38,7 @@ function App() {
         
       </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

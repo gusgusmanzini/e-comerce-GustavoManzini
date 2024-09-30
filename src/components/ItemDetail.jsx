@@ -1,47 +1,31 @@
-import React, { createContext, useState, useContext } from "react";
-import ItemCount from "./ItemCount";
-import { useNavigate } from "react-router-dom";
 
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../CartContext'; 
 
+const ItemDetail = ({ item }) => {
+    const { addItem } = useContext(CartContext);
+    const [quantity, setQuantity] = useState(1);
 
- const CartContext = createContext();
+    const handleAddToCart = () => {
+        addItem(item, quantity);
+    };
 
- export const useCart = () => useContext(CartContext);
+    const finalizarCompra = () => {
+        alert("gracias por tu compra!")
+    }
 
- export const CartProvider = ({ children }) => {
-     const [purchaseCompleted, setPurchaseCompleted] = useState(false);
-
-     return(
-         <CartContext.Provider value={{ purchaseCompleted, setPurchaseCompleted }}>
-             {children}
-         </CartContext.Provider>
-     )
- }
-
- const ItemDetail = ({ item }) => {
-     const [count, setCount] = useState(0);
-     const [showCount, setShowCount] = useState(true);
-     const navigate = useNavigate();
-
-     const onAdd = (quantity) => {
-         setCount(quantity);
-         setShowCount(false);                
-     };
-
-    
-
-    return(
-        <div>
+    return (
+        <div className="item-detail">
             <h2>{item.name}</h2>
-            <img src={item.imageUrl} alt={item.name} />
-            <p>{item.description}</p>
-            <p>{item.price}</p>
-            {showCount ? (
-                <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-            ): (
-                <button  onClick={() => navigate('/Cart')}>Finalizar la compra</button>
-              
-            )}
+            <p>Price: ${item.price}</p>
+            <div>
+                <button onClick={() => setQuantity(quantity - 1)} disabled={quantity <= 1}>-</button>
+                <span>{quantity}</span>
+                <button onClick={() => setQuantity(quantity + 1)}>+</button>
+            </div>
+            <button onClick={handleAddToCart}>Agregar al carrito</button>
+            <button onClick={finalizarCompra}>Finalizar Compra</button>
+            
         </div>
     );
 };

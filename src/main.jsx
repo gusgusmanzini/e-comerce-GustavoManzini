@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { CartProvider } from './components/ItemDetail';
+import CartProvider from './CartContext';
 import firebaseConfig from './firebaseConfig';
 
 const app = initializeApp(firebaseConfig);
