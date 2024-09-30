@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.navbar-brand h1{
+    margin: 0;
+    font-size: 24px;
+    color: white;
+}
+
+.navbar-categories {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar-item{
+    cursor: pointer;
+}
+
+.navbar-item:hover{
+    text-decoration: underline;
+}
+.navbar-cart {
+    position: relative;
+    cursor: pointer;
+    
+}
