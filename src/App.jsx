@@ -34,8 +34,8 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailContainer />} />
         <Route path="/nosotros" element={<Nosotros />} />
         <Route path="/contacto" element={<Contacto />} />
-        <Route path="/Cart" element={<Cart />} />
-        
+        {/* <Route path="/Cart" element={<Cart />} />
+         */}
       </Routes>
     </BrowserRouter>
     </CartProvider>

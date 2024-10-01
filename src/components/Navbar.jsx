@@ -1,52 +1,35 @@
-// import Container from "react-bootstrap/Container";
-// import Nav from "react-bootstrap/Nav";
-// import Navbar from "react-bootstrap/Navbar";
-// import CartWidget from "./CartWidget";
 
-// export const NavBar = () => (
-//   <>
-//     <Navbar bg="dark" data-bs-theme="dark">
-//       <Container>
-//         <div className="dropdown">
-//           <button className="dropbtn">Categorias</button>
-          
-//         </div>
-//         <Navbar.Brand href="/">Tienda Mates</Navbar.Brand>
-//         <Nav className="me-auto">
-//           <Nav.Link href="/">Inicio</Nav.Link>
-//           <Nav.Link href="/nosotros">Nosotros</Nav.Link>
-//           <Nav.Link href="/contacto">Contacto</Nav.Link>
-//         </Nav>
-//         <CartWidget />
-//       </Container>
-//     </Navbar>
-//   </>
-// );
-
-// export default NavBar;
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import './NavBar.css';
+import Cart from "../Cart";
 
-
-const NavBar =() => {
-
+const NavBar = () => {
   const categories = ['Mate1', 'Mate2', 'Mate3'];
 
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/" style={{textDecoration: 'none', color: 'white'}}>
-        <h1>Mates</h1>
-        </Link>
-        
+        <NavLink 
+          to="/" 
+          style={{ textDecoration: 'none', color: 'white' }}
+          className={({ isActive }) => (isActive ? 'active-link' : '')}
+        >
+          <h1>Mates</h1>
+        </NavLink>
       </div>
       <ul className="navbar-categories">
         {categories.map((category, index) => (
           <li key={index} className="navbar-item">
-            {category}
+            <NavLink 
+              to={`/category/${category.toLowerCase()}`} 
+              className={({ isActive }) => (isActive ? 'active-link' : '')}
+              style={{ textDecoration: 'none', color: 'white' }}
+            >
+              {category}
+            </NavLink>
           </li>
         ))}
       </ul>
@@ -54,8 +37,8 @@ const NavBar =() => {
         <CartWidget />
       </div>
     </nav>
-  )
+  );
 }
- 
 
 export default NavBar;
+
